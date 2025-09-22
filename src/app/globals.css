@@ -19,8 +19,26 @@
   }
 }
 
+/* ✅ Make Inter the default font */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ✅ Utility classes for font overrides */
+.font-dancing {
+  font-family: var(--font-dancing), cursive;
+}
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-geist-sans {
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.font-geist-mono {
+  font-family: var(--font-geist-mono), monospace;
 }
