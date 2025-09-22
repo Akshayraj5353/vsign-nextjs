@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { heroContent } from "@/constants/content";
+import Image from "next/image";
 
 const videos = ["/drone-footage1.mp4"];
+const poster = "/drone-footage1.jpg"; // lightweight image fallback
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -17,29 +18,24 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full py-12">
+    <section className="relative w-full py-12 bg-[url('/bg.svg')] bg-cover bg-center">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center px-4 md:px-8">
-        {/* Video */}
+        {/* Video Section */}
         <div className="relative w-full h-[40vh] md:h-[60vh] flex justify-center items-center overflow-hidden rounded-xl shadow-lg">
-          <AnimatePresence mode="wait">
-            <motion.video
-              key={index}
-              className="h-full md:w-full object-cover rounded-xl"
-              autoPlay
-              muted
-              loop
-              playsInline
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <source src={videos[index]} type="video/mp4" />
-            </motion.video>
-          </AnimatePresence>
+          <video
+            key={index}
+            className="h-full w-full object-cover rounded-xl"
+            autoPlay
+            muted
+            loop
+            playsInline
+            // poster={poster}
+          >
+            <source src={videos[index]} type="video/mp4" />
+          </video>
         </div>
 
-        {/* Text */}
+        {/* Text Section */}
         <div className="flex flex-col justify-center text-center md:text-left">
           <h1 className="text-2xl md:text-4xl font-bold text-gray-900 whitespace-nowrap">
             {heroContent.heading}
