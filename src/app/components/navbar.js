@@ -1,3 +1,75 @@
+// "use client";
+// import { useState } from "react";
+// import Link from "next/link";
+// import Image from "next/image";
+// import { navLinks } from "@/constants/navLinks";
+
+// export default function Navbar() {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <header className="w-full fixed top-0 left-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-sm">
+//       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+//         {/* Logo + Rating */}
+//         <div className="flex items-center gap-4">
+//           <Image
+//             src="/vsignlogo.svg"
+//             alt="V Sign Enterprises Logo"
+//             width={180}
+//             height={80}
+//             priority
+//           />
+//           <Image src="/rating.svg" alt="AVG Rating" width={120} height={80} />
+//         </div>
+
+//         {/* Tagline + Links */}
+//         <div className="hidden md:flex flex-col items-end gap-2">
+//           <span className="bg-white/20 text-gray-900/80 px-4 py-1 rounded-md text-sm font-semibold backdrop-blur-sm">
+//             Top Quality Sign Construction, Delivered On Time
+//           </span>
+//           <nav className="flex items-center gap-6">
+//             {navLinks.map(({ label, href }) => (
+//               <Link
+//                 key={label}
+//                 href={href}
+//                 className="text-[16px] font-medium text-white hover:text-green-500 transition"
+//               >
+//                 {label}
+//               </Link>
+//             ))}
+//           </nav>
+//         </div>
+
+//         {/* Mobile Menu Button */}
+//         <button
+//           onClick={() => setIsOpen(!isOpen)}
+//           aria-label="Toggle Menu"
+//           className="md:hidden flex flex-col gap-1"
+//         >
+//           <span className="w-6 h-0.5 bg-white"></span>
+//           <span className="w-6 h-0.5 bg-white"></span>
+//           <span className="w-6 h-0.5 bg-white"></span>
+//         </button>
+//       </div>
+
+//       {/* Mobile Dropdown */}
+//       {isOpen && (
+//         <div className="md:hidden flex flex-col px-6 pb-4 gap-4 bg-white/10 backdrop-blur-md border-t border-white/20">
+//           {navLinks.map(({ label, href }) => (
+//             <Link
+//               key={label}
+//               href={href}
+//               className="text-white hover:text-green-500 transition"
+//             >
+//               {label}
+//             </Link>
+//           ))}
+//         </div>
+//       )}
+//     </header>
+//   );
+// }
+
 "use client";
 import { useState } from "react";
 import Link from "next/link";
@@ -8,18 +80,18 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full shadow-sm bg-white">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    <header className="w-full shadow-sm bg-[url('/bg.svg')] bg-cover bg-center">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-1.5">
         {/* Logo + Rating */}
         <div className="flex items-center gap-4">
           <Image
             src="/vsignlogo.svg"
             alt="V Sign Enterprises Logo"
-            width={180}
-            height={80}
+            width={150}
+            height={70}
             priority
           />
-          <Image src="/rating.svg" alt="AVG Rating" width={120} height={80} />
+          <Image src="/rating.svg" alt="AVG Rating" width={100} height={70} />
         </div>
 
         {/* Tagline + Links */}

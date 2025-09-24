@@ -1,13 +1,5 @@
 export const heroContent = {
-  heading: (
-    <>
-      <span className="text-green-500 font-dancing">Hyderabad No.1</span>{" "}
-      Signage
-    </>
-  ),
-  subtext:
-    "We create premium signage solutions that light up your brand and make it impossible to ignore.",
-  cta: "Get a Quote",
+  cta: "Get Quick Estimate",
 };
 
 export const aboutContent = {
